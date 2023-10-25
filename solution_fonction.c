@@ -38,16 +38,16 @@ double point_Secante(double a, double b){
 	return (-b/a);
 }
 double solution_secante(double a, double b){
-	while(fabs(f(a)) > 0.00001 && fabs(f(b)) > 0.00001){
- 		double* c = coeff(a,f(a),b,f(b));
- 		if(f(a)<0){
-			a = point_Secante(c[0],c[1]);
-		}
-		else{
-			b = point_Secante(c[0],c[1]);
-		}
+	double i1 = a, i2 = b;
+	if(f(b) < f(a)){
+		i1 = b;
+		i2 = a;
+	}
+	while(fabs(f(i1)) > 0.00001){
+ 		double* c = coeff(i1,f(i1),i2,f(i2));
+		i1 = point_Secante(c[0],c[1]);
  	}
-	return a;
+	return i1;
 }
 
 // Méthode tangente
