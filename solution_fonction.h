@@ -4,6 +4,7 @@
 #include <stdio.h>
 #include <math.h>
 #include <stdlib.h>
+#include <string.h>
 
 double f(double x);
 
@@ -19,5 +20,8 @@ double solution_secante(double a, double b);
 double derive_au_point(double xo);
 double point_tangente(double xo);
 double solution_tangente(double a);
+
+/// tableau
+void tableIteration(double a,double b,char* method);
 
 #endif
